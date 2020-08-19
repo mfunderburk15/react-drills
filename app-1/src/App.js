@@ -1,23 +1,25 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import "./App.css";
 
 export default class App extends Component {
   constructor() {
     super();
+
     this.state = {
-      output: '',
-    }
+      message: ""
+    };
   }
 
   handleChange(value) {
-    this.setState({ output: value })
+    this.setState({ message: value });
   }
 
   render() {
     return (
       <div className="App">
-        <input className="input-box" type="text" onChange={(e) => this.handleChange(e.target.value)} />
-        <p className="output-box">{this.state.output}</p>
+        <input onChange={e => this.handleChange(e.target.value)} type="text" />
+        <p>{this.state.message}</p>
       </div>
-    )
+    );
   }
 }
